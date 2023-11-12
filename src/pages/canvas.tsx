@@ -182,21 +182,13 @@ export default function Home() {
     a.click();
   };
 
-  useEffect(() => {
-    // find prompts in localstorage
-    const p = localStorage.getItem("prompts");
-    if (p) {
-      setPrompts(JSON.parse(p));
-    }
-  }, []);
-
   return (
     <main
-      className={`flex min-h-screen flex-col items-center gap-12 p-12 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center gap-12 py-12 px-3 md:px-12 ${inter.className}`}
     >
       <div className="bg-black py-6 px-12 border rounded-lg border-gray-600 w-full flex justify-between items-center">
         <h2 className="text-2xl font-bold">Comic AI</h2>
-        <div>
+        <div className="hidden md:block">
           <Breadcrumbs aria-label="breadcrumb">
             <Link href="/" className="text-blue-400">
               Home
@@ -210,17 +202,17 @@ export default function Home() {
       </div>
       <div
         id="input-form"
-        className="border rounded-lg border-gray-600 w-full px-12 py-6 bg-slate-800 bg-opacity-80"
+        className="border rounded-lg border-gray-600 w-full px-6 md:px-12 py-6 bg-slate-800 bg-opacity-80"
       >
         <h3 className="text-xl font-semibold mb-6 text-center">Text Prompts</h3>
         {prompts &&
           prompts.map((p: Prompt, index: number) => (
             <div
               key={index}
-              className="border-b border-gray-600 border-opacity-40 gap-4 flex items-center justify-between p-2"
+              className="border-b border-gray-600 border-opacity-40 gap-4 flex flex-col md:flex-row md:items-center justify-between p-2"
             >
               <p>{p.text}</p>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap md:gap-2">
                 {p.loading && <CircularProgress size={20} />}
                 <Button
                   startIcon={<EditIcon />}
@@ -276,15 +268,15 @@ export default function Home() {
 
       <div
         id="comic-preview"
-        className="border rounded-lg border-gray-600 w-full px-12 py-6 bg-slate-800 bg-opacity-80"
+        className="border rounded-lg border-gray-600 w-full px-6 md:px-12 py-6 bg-slate-800 bg-opacity-80"
       >
-        <div className="text-xl font-semibold mb-6 text-center flex justify-between">
+        <div className="text-xl font-semibold mb-6 text-center flex flex-col md:flex-row justify-between">
           <span className="grow text-left">Comic Preview</span>
           <Stack
             spacing={2}
             direction="row"
-            sx={{ mx: 12 }}
             alignItems="center"
+            className="md:mx-12"
           >
             <ViewColumnIcon color="info" />
             <Slider
@@ -297,7 +289,8 @@ export default function Home() {
               max={5}
               value={columns}
               onChange={handleChange}
-              sx={{ width: 200, mx: 12 }}
+              // sx={{ width: 200, mx: 12 }}
+              className="w-72"
             />
           </Stack>
           <Button
@@ -387,6 +380,7 @@ export default function Home() {
         open={open}
         onClose={handleClose}
         selectedValue={previewPrompt}
+        setSelectValue={setPreviewPrompt}
         annotate={handleAnnotationEdit}
         updatePrompt={handlePromptUpdate}
       />
