@@ -16,7 +16,7 @@ const Home = () => {
           tales effortlessly. Bring characters to life in a click!
         </p>
         <Link href="/canvas">
-          <Button variant="contained" color="info">
+          <Button variant="outlined" color="info">
             Launch Canvas!
           </Button>
         </Link>

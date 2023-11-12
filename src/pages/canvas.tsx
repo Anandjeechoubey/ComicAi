@@ -28,6 +28,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useScreenshot, createFileName } from "use-react-screenshot";
 import AnnotateModal from "@/components/AnnotateModal";
 import { getImage } from "@/utils/getImage";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -197,9 +198,9 @@ export default function Home() {
         <h2 className="text-2xl font-bold">Comic AI</h2>
         <div>
           <Breadcrumbs aria-label="breadcrumb">
-            <a href="/" className="text-blue-400">
+            <Link href="/" className="text-blue-400">
               Home
-            </a>
+            </Link>
             <p className="text-gray-400">Canvas</p>
           </Breadcrumbs>
         </div>
