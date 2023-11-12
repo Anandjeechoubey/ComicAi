@@ -220,6 +220,7 @@ export default function Home() {
           prompts.map((p: Prompt, index: number) => (
             <div
               key={index}
+              style={{ color: "white" }}
               className="border-b border-gray-600 border-opacity-40 gap-4 flex flex-col md:flex-row md:items-center justify-between p-2"
             >
               <p>{p.text}</p>
