@@ -187,7 +187,9 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center gap-12 py-12 px-3 md:px-12 ${inter.className}`}
     >
       <div className="bg-black py-6 px-12 border rounded-lg border-gray-600 w-full flex justify-between items-center">
-        <h2 className="text-2xl font-bold">Comic AI</h2>
+        <h2 className="text-2xl font-bold" style={{ color: "white" }}>
+          Comic AI
+        </h2>
         <div className="hidden md:block">
           <Breadcrumbs aria-label="breadcrumb">
             <Link href="/" className="text-blue-400">
@@ -196,7 +198,11 @@ export default function Home() {
             <p className="text-gray-400">Canvas</p>
           </Breadcrumbs>
         </div>
-        <a href="https://anandjeechoubey.com" className="">
+        <a
+          href="https://anandjeechoubey.com"
+          style={{ color: "white" }}
+          className=""
+        >
           About me
         </a>
       </div>
@@ -204,7 +210,12 @@ export default function Home() {
         id="input-form"
         className="border rounded-lg border-gray-600 w-full px-6 md:px-12 py-6 bg-slate-800 bg-opacity-80"
       >
-        <h3 className="text-xl font-semibold mb-6 text-center">Text Prompts</h3>
+        <h3
+          className="text-xl font-semibold mb-6 text-center"
+          style={{ color: "white" }}
+        >
+          Text Prompts
+        </h3>
         {prompts &&
           prompts.map((p: Prompt, index: number) => (
             <div
@@ -271,7 +282,9 @@ export default function Home() {
         className="border rounded-lg border-gray-600 w-full px-6 md:px-12 py-6 bg-slate-800 bg-opacity-80"
       >
         <div className="text-xl font-semibold mb-6 text-center flex flex-col md:flex-row justify-between">
-          <span className="grow text-left">Comic Preview</span>
+          <span className="grow text-left" style={{ color: "white" }}>
+            Comic Preview
+          </span>
           <Stack
             spacing={2}
             direction="row"
