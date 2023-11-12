@@ -27,9 +27,9 @@
 } */
 
 body {
-  --dot-bg: black;
-  --dot-color: rgba(255, 255, 255, 0.1);
-  --dot-size: 0.7px;
+  --dot-bg: rgb(16, 16, 16);
+  --dot-color: rgba(27, 27, 27, 0.135);
+  --dot-size: 0.5px;
   --dot-space: 52px;
 
   color: rgb(var(--foreground-rgb));
