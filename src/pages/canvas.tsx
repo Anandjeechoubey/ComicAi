@@ -303,8 +303,9 @@ export default function Home() {
               max={5}
               value={columns}
               onChange={handleChange}
-              // sx={{ width: 200, mx: 12 }}
-              className="w-72"
+              sx={{ width: 288, mx: 12 }}
+
+              // className="w-72"
             />
           </Stack>
           <Button
